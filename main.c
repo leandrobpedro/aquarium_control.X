@@ -12,7 +12,7 @@
 #include <aquaproj.h>
 
 
-#use delay(clock = 3M)    // TODO: checar clock do PIC16F877A
+#use delay(clock = 3M)
 #fuses RC, NOWDT, NOBROWNOUT, NODEBUG, NOPUT, NOPROTECT
 
 static long int ligthDelay = 5; // intervalo de iluminacao, definir aqui valor inicial
@@ -199,6 +199,7 @@ void main () {
     setup_adc_ports(RA0_ANALOG);                    // configura porta RA0/AN0 como conversor A/D
     setup_adc(ADC_CLOCK_INTERNAL);
     set_adc_channel(0);
+    delay_us(10);
     //-------------------------------
 
 
@@ -211,8 +212,8 @@ void main () {
     while (TRUE) {
         tecla = tecladodb(100);
         leitura = read_adc();               // faz leitura sensor temperatura
-        // delay_ms(100);
-        leitura = (leitura * 50) / 255;    // converte entrada 8-bit (0-255) em °C (0-50)
+        delay_us(10);
+        leitura = (leitura * 50) / 255;     // converte entrada 8-bit (0-255) em °C (0-50)
 
         if (tecla == '#')                   // se tecla '#' entra em modo de conf. de ilumincao
             confIluminacao();               // chama funcao configura iluminacao
