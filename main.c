@@ -4,7 +4,7 @@
  *
  * Alunos       : Thyago | Flavio
  * Data         : 30-oct-2013
- * Atualizado   : 20-nov-2013
+ * Atualizado   : 28-nov-2013
  */
 
 #include <16F877A.h>
@@ -13,7 +13,7 @@
 
 
 #use delay(clock = 3M)    // TODO: checar clock do PIC16F877A
-#fuses HS, NOWDT, PUT
+#fuses RC, NOWDT, NOBROWNOUT, NODEBUG, NOPUT, NOPROTECT
 
 static long int ligthDelay = 5; // intervalo de iluminacao, definir aqui valor inicial
 static int contLight = 0;       // variavel usada p/ contar ciclos
