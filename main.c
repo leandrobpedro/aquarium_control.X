@@ -219,7 +219,7 @@ void main () {
             confIluminacao();               // chama funcao configura iluminacao
         
 //        if (tecla == '*')                   // se tecla '*' entra em modo de conf. de alimentacao
-//            confIluminacao();               // chama funcao configura alimentacao
+//            confAlimentacao();               // chama funcao configura alimentacao
 
         
         if (leitura < 18)                   // temperatura minima (18 °C)
